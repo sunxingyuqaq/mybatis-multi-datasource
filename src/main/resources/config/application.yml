@@ -1,0 +1,21 @@
+boot:
+  datasource:
+    primary:
+      url: jdbc:mysql://localhost:3306/primary?useUnicode=true&characterEncoding=utf8&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+    second:
+      url: jdbc:mysql://localhost:3306/second?useUnicode=true&characterEncoding=utf8&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+mybatis:
+  type-aliases-package: com.boot.multi.datasource.entity
+  config-location: classpath:config/mybatis/mybatis.xml
+  mapper-locations: classpath:config/mybatis/mapper/*.xml
+logging:
+  level:
+    com.boot.multi.datasource.mybatis.dao: trace
+    root: info
+    com.boot.multi: debug
